@@ -7,14 +7,22 @@
 //
 
 import UIKit
+import AWSCore
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
-
+    private let accessKey = "please set accessKey"
+    private let secretKey = "please set secretKey"
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        let provider = AWSStaticCredentialsProvider(
+            accessKey: self.accessKey, secretKey: self.secretKey)
+        let configuration = AWSServiceConfiguration(
+            region: AWSRegionType.APNortheast1,
+            credentialsProvider: provider)
+        AWSServiceManager.default().defaultServiceConfiguration = configuration
         return true
     }
 
