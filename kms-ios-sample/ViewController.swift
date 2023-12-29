@@ -17,18 +17,10 @@ class ViewController: UIViewController {
     @IBOutlet private weak var decryptResult: UITextField!
 
     private var client: AWSKMS?
-    private let accessKey = "please set accessKey"
-    private let secretKey = "please set secretKey"
     private let keyId = "please set keyId"
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        let provider = AWSStaticCredentialsProvider(
-            accessKey: self.accessKey, secretKey: self.secretKey)
-        let configuration = AWSServiceConfiguration(
-            region: AWSRegionType.APNortheast1,
-            credentialsProvider: provider)
-        AWSServiceManager.default().defaultServiceConfiguration = configuration
         self.client = AWSKMS.default()
     }
 
@@ -53,7 +45,7 @@ class ViewController: UIViewController {
             request?.keyId = self.keyId
             self.client!.decrypt(request!).continueWith { (task: AWSTask<AWSKMSDecryptResponse>) -> Any? in
                 DispatchQueue.main.async {
-                    self.decryptResult.text = String(data: (task.result!.plaintext)!, encoding: .utf8)
+                    self.decryptResult.text = String(data: (task.result?.plaintext)!, encoding: .utf8)
                 }
                 return
             } .waitUntilFinished()
