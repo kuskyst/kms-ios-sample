@@ -1,0 +1,20 @@
+PODS:
+  - AWSCore (2.15.3)
+  - AWSKMS (2.15.3):
+    - AWSCore (= 2.15.3)
+
+DEPENDENCIES:
+  - AWSKMS
+
+SPEC REPOS:
+  https://github.com/CocoaPods/Specs.git:
+    - AWSCore
+    - AWSKMS
+
+SPEC CHECKSUMS:
+  AWSCore: 5a8f9d7461dbe5ea6a5473c41cf113b687e19136
+  AWSKMS: 43baadcb57f16c97be9ec1858f52f6a1663657a5
+
+PODFILE CHECKSUM: e13a25b51361a842c894508bec542e85404e2cbf
+
+COCOAPODS: 1.14.3

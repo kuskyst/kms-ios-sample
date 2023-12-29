@@ -1,0 +1,3 @@
+${PODS_ROOT}/Target Support Files/Pods-kms-ios-sample/Pods-kms-ios-sample-frameworks.sh
+${BUILT_PRODUCTS_DIR}/AWSCore/AWSCore.framework
+${BUILT_PRODUCTS_DIR}/AWSKMS/AWSKMS.framework
